@@ -1,4 +1,4 @@
-package cc.oiuio.concurrency.atomic;
+package cc.oiuio.concurrency.example.atomic;
 
 import cc.oiuio.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
