@@ -2,6 +2,7 @@ package cc.oiuio.concurrency.example.singleton;
 
 import cc.oiuio.concurrency.annoations.Recommend;
 import cc.oiuio.concurrency.annoations.ThreadSafe;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 枚举模式：最安全
@@ -9,16 +10,16 @@ import cc.oiuio.concurrency.annoations.ThreadSafe;
 
 @ThreadSafe
 @Recommend
+@Slf4j
 public class SingletonExample7 {
 
 	private SingletonExample7() {
 
 	}
 
-	public SingletonExample7 getInstance() {
+	public static SingletonExample7 getInstance() {
 		return Singleton.INSTANCE.getInstance();
 	}
-
 
 	private enum Singleton {
 		INSTANCE;
@@ -34,6 +35,9 @@ public class SingletonExample7 {
 			return singleton;
 		}
 
+	}
 
+	public static void main(String[] args) {
+		log.info("{}", SingletonExample7.getInstance().hashCode());
 	}
 }
